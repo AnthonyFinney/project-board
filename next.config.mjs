@@ -21,13 +21,13 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/:lang",
+        source: "/:lang(en|ar)",
         destination:
           "/:lang" + (process.env.HOME_PATHNAME ?? "/dashboards/analytics"),
         permanent: true,
       },
       {
-        source: "/:lang/apps/email",
+        source: "/:lang(en|ar)/apps/email",
         destination: "/:lang/apps/email/inbox",
         permanent: true,
       },

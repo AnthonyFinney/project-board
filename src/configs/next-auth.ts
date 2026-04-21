@@ -89,6 +89,7 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/sign-in", // Custom sign-in page
   },
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt", // Use JWT strategy for sessions
     maxAge: 30 * 24 * 60 * 60, // Set session expiration to 30 days
