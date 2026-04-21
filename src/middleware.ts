@@ -1,16 +1,13 @@
 import { NextResponse } from "next/server"
-import { getToken } from "next-auth/jwt"
 
 import type { NextRequest } from "next/server"
 
-import { isGuestRoute, isPublicRoute } from "@/lib/auth-routes"
 import {
   ensureLocalizedPathname,
   getLocaleFromPathname,
   getPreferredLocale,
   isPathnameMissingLocale,
 } from "@/lib/i18n"
-import { ensureRedirectPathname, ensureWithoutPrefix } from "@/lib/utils"
 
 function redirect(pathname: string, request: NextRequest) {
   const { search, hash } = request.nextUrl
@@ -35,8 +32,6 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   console.log(pathname)
   const locale = getLocaleFromPathname(pathname)
-  const pathnameWithoutLocale = ensureWithoutPrefix(pathname, `/${locale}`)
-  const isNotPublic = !isPublicRoute(pathnameWithoutLocale)
 
   // Handle authentication for protected and guest routes
   /*

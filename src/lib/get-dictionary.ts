@@ -12,7 +12,9 @@ const dictionaries = {
 
 export async function getDictionary(locale: LocaleType) {
   if (!dictionaries[locale]) {
-    console.warn(`Dictionary for locale "${locale}" not found. Falling back to default locale "en".`)
+    console.warn(
+      `Dictionary for locale "${locale}" not found. Falling back to default locale "en".`
+    )
     return dictionaries.en()
   }
   return dictionaries[locale]()

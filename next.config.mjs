@@ -22,7 +22,8 @@ const nextConfig = {
       },
       {
         source: "/:lang",
-        destination: "/:lang" + (process.env.HOME_PATHNAME ?? "/dashboards/analytics"),
+        destination:
+          "/:lang" + (process.env.HOME_PATHNAME ?? "/dashboards/analytics"),
         permanent: true,
       },
       {
