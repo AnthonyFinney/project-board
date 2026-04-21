@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     default: "Moonboard",
   },
   description: "",
-  metadataBase: new URL(process.env.BASE_URL as string),
+  metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
 }
 
 // Define fonts for the application
